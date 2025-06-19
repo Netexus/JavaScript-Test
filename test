@@ -1,0 +1,227 @@
+// 1. Variables básicas
+let nombre = "Luis";
+let edad = 25;
+let estatura = 1.75;
+let ciudad = "Medellín";
+let tieneMascota = true;
+
+// 2. Cambiar valores y mostrar tipo
+nombre = "Ana";             // string
+edad = 30;                  // number
+estatura = 1.68;            // number
+ciudad = "Bogotá";          // string
+tieneMascota = false;       // boolean
+
+console.log(typeof nombre, typeof edad, typeof estatura, typeof ciudad, typeof tieneMascota);
+
+// 3. Suma y concatenación
+let amigosFacebook = 100;
+let amigosInstagram = 150;
+let totalAmigos = amigosFacebook + amigosInstagram;
+let saludo = "Hola, tengo " + totalAmigos + " amigos.";
+
+console.log(saludo);
+
+// 4. Discoteca
+let edadPersona = 17;
+if (edadPersona > 18) {
+  console.log("Puedes entrar");
+} else {
+  console.log("No puedes entrar");
+}
+
+// 5. Descuento
+let productos = 4;
+if (productos > 3) {
+  console.log("Aplica descuento");
+} else {
+  console.log("No aplica descuento");
+}
+
+// 6. Evaluar nota
+let nota = 4.5;
+if (nota < 3) {
+  console.log("Reprobado");
+} else if (nota < 4.5) {
+  console.log("Aprobado");
+} else {
+  console.log("Excelente desempeño");
+}
+
+// 7. Semáforo
+let color = "rojo";
+if (color === "verde") {
+  console.log("Avanzar");
+} else if (color === "rojo") {
+  console.log("Detenerse");
+} else if (color === "amarillo") {
+  console.log("Esperar");
+}
+
+// 8. Torneo
+let edadTorneo = 20;
+let pais = "Colombia";
+if (edadTorneo >= 15 && edadTorneo <= 35 && pais === "Colombia") {
+  console.log("Puede participar");
+} else {
+  console.log("No puede participar");
+}
+
+// 9. Banca
+let saldo = 1500000;
+let tieneTarjetaPremium = false;
+if (saldo < 10000) {
+  console.log("Saldo insuficiente");
+} else if (saldo <= 1000000) {
+  console.log("Saldo moderado");
+} else if (saldo > 1000000 || tieneTarjetaPremium) {
+  console.log("Cliente preferencial");
+}
+
+// 10. Menú del día
+let dia = "martes";
+switch (dia) {
+  case "lunes":
+    console.log("Menú: Frijoles");
+    break;
+  case "martes":
+    console.log("Menú: Pasta");
+    break;
+  case "miércoles":
+    console.log("Menú: Pollo");
+    break;
+  default:
+    console.log("Menú no disponible");
+}
+
+// 11. Oferta
+let sesionIniciada = true;
+let reportesActivos = false;
+let edadOferta = 22;
+let premium = false;
+if (sesionIniciada && !reportesActivos && (edadOferta > 21 || premium)) {
+  console.log("Puede acceder a la oferta");
+} else {
+  console.log("No puede acceder");
+}
+
+// 12. Transporte
+let hora = "tarde";
+let clima = "lluvioso";
+let tieneParaguas = false;
+
+if (clima === "soleado") {
+  console.log("Puedes caminar");
+} else if (clima === "lluvioso" && tieneParaguas) {
+  console.log("Puedes caminar");
+} else if (clima === "lluvioso" && !tieneParaguas) {
+  console.log("Espera o toma bus");
+} else {
+  console.log("Toma bus");
+}
+
+// 13. Acceso a plataforma
+let usuario = "admin";
+let contrasena = "1234";
+let intentosFallidos = 1;
+
+if ((usuario === "admin" && intentosFallidos <= 1) || (usuario === "user" && intentosFallidos <= 3)) {
+  console.log("Acceso permitido");
+} else {
+  console.log("Acceso bloqueado");
+}
+
+// 14. Nombres válidos
+let usuarios = ["Ana", "Jo", "Carlos", "Li", "Pedro"];
+let validos = 0;
+
+for (let nombre of usuarios) {
+  if (nombre.length > 3) {
+    validos++;
+  } else {
+    console.log(`Error: ${nombre} es muy corto`);
+  }
+}
+console.log(`Usuarios válidos: ${validos}`);
+
+// 15. Validar contraseñas
+let contrasenas = ["clave123", "123", "abc", "validpass1", "admin"];
+for (let c of contrasenas) {
+  if (c.length >= 8 && /\d/.test(c)) {
+    console.log("Contraseña válida:", c);
+    break;
+  } else {
+    console.log("Debe cambiar contraseña:", c);
+  }
+}
+
+// 16. Encuesta
+let respuestas = [3, 4, 2, 5];
+for (let r of respuestas) {
+  if (r !== 5) {
+    console.log("Gracias. ¿Qué calificación das (1 a 5)?");
+  } else {
+    console.log("¡Gracias por tu 5!");
+    break;
+  }
+}
+
+// 17. Login 3 intentos
+let user = "user";
+let pass = "1234";
+let intentos = 0;
+
+while (intentos < 3) {
+  let u = "user";
+  let p = "1234"; // Simulación
+  if (u === user && p === pass) {
+    console.log("Bienvenido");
+    break;
+  } else {
+    intentos++;
+    console.log(`Intento fallido. Quedan ${3 - intentos}`);
+  }
+  if (intentos === 3) console.log("Cuenta bloqueada");
+}
+
+// 18. Menú interactivo
+let opcion = "";
+let opciones = ["Ver perfil", "Editar perfil", "Cerrar sesión", "salir"];
+for (let o of opciones) {
+  if (o === "salir") {
+    console.log("Saliendo del sistema");
+    break;
+  } else {
+    console.log(`Opción: ${o}`);
+  }
+}
+
+// 19. Carrito
+let carrito = [
+  { producto: "Camisa", precio: 20000 },
+  { producto: "Pantalón", precio: 40000 },
+  { producto: "Zapatos", precio: 80000 }
+];
+let total = 0;
+for (let item of carrito) {
+  total += item.precio;
+}
+console.log(`Total a pagar: $${total}`);
+
+// 20. Notas estudiantes
+let notas = [2.5, 3.0, 4.8, 1.9, 3.6];
+let riesgo = 0;
+let suma = 0;
+let mayor = Math.max(...notas);
+let menor = Math.min(...notas);
+
+for (let n of notas) {
+  suma += n;
+  if (n < 3) {
+    console.log(`Nota ${n} en riesgo`);
+    riesgo++;
+  }
+}
+console.log(`Promedio: ${(suma / notas.length).toFixed(2)}`);
+console.log(`Estudiantes en riesgo: ${riesgo}`);
+console.log(`Mayor nota: ${mayor}, Menor nota: ${menor}`);
