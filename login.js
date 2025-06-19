@@ -1,11 +1,11 @@
 const username = "lucho24";
 const pass = "9876543210";
-attempts = 3
 
-while (attempts < 3) {
+for (let index = 1; index < 3; index++) {
+    alert("Attempt: " + index)
     user = prompt("Enter your username: ")
     password = prompt("Enter your password: ")
     if (user != username && password != pass) {
-        alert("User or password incorrect! You have now" + attempts + " attempts")
+        alert("User or password incorrect! Attempt")
     }
 }
