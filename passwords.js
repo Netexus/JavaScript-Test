@@ -1,10 +1,13 @@
-let passwords = [];
-let password = ""
+let passwords = ["password123", "123", "abword", "validpass1", "admin"];
 let regex = /\d/;
 
-// do {
-//     password = prompt("Enter your password (At least 1 number and 8 characters)")
-// } while (regex.test(password));
-// passwords = password 
-// alert(passwords)
-// password.length !== "8" && !
+for (let word of passwords) {
+  if (word.length >= 8 && regex.test(word)) {
+    console.log("Valid password!:", word);
+    break;
+  } else {
+    console.log("Try again!", word);
+  }
+}
+
+
